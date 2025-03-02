@@ -49,7 +49,7 @@ A Flask-based web application for uploading, managing, and scanning documents wi
     """Make Sure you have C++ Build tools to for Spacy Installation."""
 
 4.  Install SpaCy Model:
-    python -m spacy download en_core_web_sm
+    python -m spacy download en_core_web_md
 
 5.  Run the Application
     Python app.py
