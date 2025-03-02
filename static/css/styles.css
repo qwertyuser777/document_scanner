@@ -1,0 +1,380 @@
+/* Reset and Minimalist Typography */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #E8F5E9, #E3F2FD);
+    color: #333;
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+/* Specific Body Styling for Login/Register */
+body.auth-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Header Styling */
+header {
+    width: 100%;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+/* Default Header for Index, Profile, etc. */
+header:not(.auth-header) {
+    position: sticky;
+    top: 0;
+    background: linear-gradient(135deg, #4CAF50, #2196F3);
+}
+
+/* Specific Header for Login/Register */
+.auth-header {
+    background: linear-gradient(135deg, #4CAF50, #2196F3);
+    padding: 20px;
+    width: 100%;
+    text-align: center;
+}
+
+.auth-header h1 {
+    font-size: 2.5em;
+    color: #fff;
+}
+
+header p {
+    font-size: 1em;
+    color: #fff;
+}
+
+header nav a {
+    color: #fff;
+    text-decoration: none;
+    margin-left: 20px;
+    font-size: 1em;
+    transition: color 0.3s ease;
+}
+
+header nav a:hover {
+    color: #E0F7FA;
+}
+
+/* Main Content */
+main {
+    padding: 20px;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Card Structure */
+.auth-card {
+    width: 100%;
+    max-width: 400px;
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    margin: 40px 0;
+    padding: 30px;
+}
+
+.card {
+    width: 100%;
+    max-width: 800px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+h2 {
+    color: #4CAF50;
+    font-size: 1.8em;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+/* Form Content */
+.auth-content {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.auth-content h2 {
+    font-size: 1.5em;
+    color: #333;
+    text-align: center;
+}
+
+.auth-content input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #CFD8DC;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+.auth-content button {
+    background: #4CAF50;
+    color: #fff;
+    border: none;
+    padding: 12px;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.auth-content button:hover {
+    background: #66BB6A;
+}
+
+.auth-content p {
+    text-align: center;
+    font-size: 0.9em;
+}
+
+.auth-content a {
+    color: #2196F3;
+    text-decoration: none;
+}
+
+.auth-content a:hover {
+    text-decoration: underline;
+}
+
+/* Messages */
+#loginMessage, #registerMessage {
+    font-size: 0.9em;
+    text-align: center;
+}
+
+/* Form Styling for Index */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+}
+
+input[type="file"], input[type="text"], input[type="password"] {
+    padding: 10px;
+    border: 1px solid #CFD8DC;
+    border-radius: 5px;
+    font-size: 1em;
+    width: 100%;
+    max-width: 300px;
+}
+
+label {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+}
+
+/* Interactive Buttons for Forms and Tables */
+button, .button {
+    background: #2196F3; /* Blue for buttons */
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: all 0.3s ease;
+}
+
+button:hover, .button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+button:disabled {
+    background: #B0BEC5;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+/* Profile Dashboard Tiles */
+.button-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+}
+
+.button-group button {
+    width: 180px; /* Wider buttons */
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: #2196F3; /* Blue for buttons */
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    font-size: 0.9em; /* Slightly smaller text */
+}
+
+.button-group button:hover {
+    background: #42A5F5; /* Lighter blue on hover */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Dynamic Document Table */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #E0E0E0;
+}
+
+th {
+    background: #424242; /* Neutral gray for table headers */
+    color: #fff;
+}
+
+tr {
+    background: #fff; /* White background for rows */
+}
+
+td {
+    color: #2196F3; /* Blue text for table content */
+}
+
+/* Truncate Filename */
+td:nth-child(2) { /* Filename column */
+    max-width: 150px; /* Adjust width as needed */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Actions Column */
+td:last-child { /* Actions column */
+    white-space: nowrap; /* Keep buttons inline */
+}
+
+tr:nth-child(even) {
+    background: #F9F9F9; /* Light gray for alternating rows */
+}
+
+tr:hover {
+    background: #E0F7FA; /* Light blue on hover */
+}
+
+/* Floating Action Button (FAB) */
+.fab {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    background: #4CAF50;
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2em;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.fab:hover {
+    transform: scale(1.1);
+    background: #66BB6A;
+}
+
+/* Matches Section Accordion */
+#matchesSection {
+    margin-top: 20px;
+}
+
+#matchesSection h3 {
+    font-size: 1.5em;
+    color: #4CAF50;
+    margin-bottom: 10px;
+}
+
+#matchesSection details {
+    margin: 10px 0;
+    background: #fff;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+#matchesSection summary {
+    cursor: pointer;
+    padding: 10px;
+    background: #E8F5E9;
+    font-weight: bold;
+}
+
+#matchesSection details[open] summary {
+    background: #C8E6C9;
+}
+
+#matchesSection p {
+    padding: 10px;
+    border: 1px solid #E0E0E0;
+    border-top: none;
+}
+
+/* Messages */
+#uploadMessage, #loginMessage, #registerMessage, #requestMessage {
+    margin-top: 10px;
+    font-size: 1em;
+    text-align: center;
+}
+
+/* Search Input */
+#docSearch {
+    width: 100%;
+    max-width: 300px;
+    margin-bottom: 15px;
+}
+
+/* Analytics Specific */
+#admin_analytics .card > div {
+    margin-bottom: 20px;
+}
+
+#admin_analytics ul {
+    list-style: none;
+    padding: 0;
+}
+
+#admin_analytics ul li {
+    padding: 5px 0;
+}

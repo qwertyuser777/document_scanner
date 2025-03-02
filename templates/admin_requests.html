@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - Credit Requests</title>
+    <link rel="stylesheet" href="/static/css/styles.css">
+</head>
+<body>
+    <header>
+        <h1>Document Scanner - Admin</h1>
+        <nav>
+            <a href="/">Home</a>
+            <a href="#" id="logoutLink">Logout</a>
+        </nav>
+    </header>
+    <main>
+        <section class="card">
+            <h2>Pending Credit Requests</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Username</th>
+                        <th>Request Date</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for req in requests %}
+                    <tr>
+                        <td>{{ req.id }}</td>
+                        <td>{{ req.username }}</td>
+                        <td>{{ req.request_date }}</td>
+                        <td>
+                            <button onclick="updateCredits({{ req.id }}, 'approve')">Approve</button>
+                            <button onclick="updateCredits({{ req.id }}, 'deny')">Deny</button>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </section>
+    </main>
+    <script src="/static/js/script.js"></script>
+</body>
+</html>

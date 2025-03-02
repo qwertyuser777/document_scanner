@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - Document Scanner</title>
+    <link rel="stylesheet" href="/static/css/styles.css">
+</head>
+<body class="auth-page">
+    <header class="auth-header">
+        <h1>Document Scanner</h1>
+    </header>
+    <section class="auth-card">
+        <div class="auth-content">
+            <h2>Register</h2>
+            <form id="registerForm">
+                <input type="text" id="username" placeholder="Username" required>
+                <input type="password" id="password" placeholder="Password" required>
+                <button type="submit">Register</button>
+            </form>
+            <p id="registerMessage"></p>
+            <p>Already registered? <a href="/login">Login here</a></p>
+        </div>
+    </section>
+    <script src="/static/js/script.js"></script>
+</body>
+</html>

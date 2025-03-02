@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile - Document Scanner</title>
+    <link rel="stylesheet" href="/static/css/styles.css">
+</head>
+<body>
+    <header>
+        <h1>Document Scanner</h1>
+        <p id="userInfo">Welcome, {{ username }}! Credits: {{ credits }}</p>
+        <nav>
+            <a href="/">Home</a>
+            <a href="/user/documents">My Documents</a>
+            <a href="#" id="logoutLink">Logout</a>
+        </nav>
+    </header>
+    <main>
+        <section class="card">
+            <h2>Your Profile</h2>
+            <p id="usernameDisplay">Username: {{ username }}</p>
+            <p id="creditsDisplay">Credits: {{ credits }}</p>
+            <div class="button-group">
+                <button id="requestCredits">Request More Credits</button>
+                <button id="viewRequests" style="display: none;">View Credit Requests</button>
+                <button id="viewAnalytics" style="display: none;">View Analytics</button>
+            </div>
+            <p id="requestMessage"></p>
+            <div id="requestsSection" style="display: none;">
+                <h3>Pending Credit Requests</h3>
+                <table id="requestsTable">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Username</th>
+                            <th>Request Date</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% if requests %}
+                            {% for req in requests %}
+                            <tr>
+                                <td>{{ req.id }}</td>
+                                <td>{{ req.username }}</td>
+                                <td>{{ req.request_date }}</td>
+                                <td>
+                                    <button onclick="updateCredits({{ req.id }}, 'approve')">Approve</button>
+                                    <button onclick="updateCredits({{ req.id }}, 'deny')">Deny</button>
+                                </td>
+                            </tr>
+                            {% endfor %}
+                        {% else %}
+                            <tr>
+                                <td colspan="4" style="text-align: center;">No pending credit requests.</td>
+                            </tr>
+                        {% endif %}
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+    <a href="/" class="fab" id="fabUpload">+</a>
+    <script src="/static/js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document Scanner</title>
+    <link rel="stylesheet" href="/static/css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1>Document Scanner</h1>
+        <p id="userInfo">Welcome, {{ username }}! Your Avalible Credits: {{ credits }}</p>
+        <nav>
+            <a href="/user/profile">Profile</a>
+            <a href="/user/documents">My Documents</a>
+            <a href="#" id="logoutLink">Logout</a>
+        </nav>
+    </header>
+    <main>
+        <section class="card">
+            <h2>Upload a Document</h2>
+            <form id="uploadForm">
+                <input type="file" id="fileInput" accept=".pdf,.txt,.png,.jpg,.jpeg" required>
+                <label><input type="checkbox" id="aiCheck"> AI Check</label>
+                <button type="submit">Upload</button>
+            </form>
+            <p id="uploadMessage"></p>
+            <div id="matchesSection" style="display: none;">
+                <h3>Similar Documents</h3>
+                <div id="matchesList"></div>
+            </div>
+        </section>
+        <section class="card">
+            <h2>Uploaded Documents </h2>
+            <table id="docTable">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Filename</th>
+                        <th>Upload Date</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="docList"></tbody>
+            </table>
+        </section>
+    </main>
+    <a href="#" class="fab" id="fabUpload">+</a>
+    <script src="/static/js/script.js"></script>
+</body>
+</html>

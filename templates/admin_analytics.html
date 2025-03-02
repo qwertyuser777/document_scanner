@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Analytics - Document Scanner</title>
+    <link rel="stylesheet" href="/static/css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1>Document Scanner - Admin Analytics</h1>
+        <nav>
+            <a href="/user/profile">Profile</a>
+            <a href="/user/documents">My Documents</a>
+            <a href="#" id="logoutLink">Logout</a>
+        </nav>
+    </header>
+    <main>
+        <section class="card">
+            <h2>Analytics Dashboard</h2>
+            <div>
+                <h3>Total Scans Today</h3>
+                <p>{{ total_scans_today }}</p>
+            </div>
+            <div>
+                <h3>Most Active Users</h3>
+                <table id="topUsersTable">
+                    <thead>
+                        <tr>
+                            <th>Username</th>
+                            <th>Total Scans</th>
+                            <th>Credits Used</th>
+                            <th>Current Credits</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for user in top_users %}
+                        <tr>
+                            <td>{{ user.username }}</td>
+                            <td>{{ user.scans }}</td>
+                            <td>{{ user.credits_used }}</td>
+                            <td>{{ user.current_credits }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+            <div>
+                <h3>Popular Scanned Topics</h3>
+                <ul id="topicsList">
+                    {% for topic in common_topics %}
+                    <li>{{ topic.keyword }} ({{ topic.count }} occurrences)</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </section>
+    </main>
+    <a href="/" class="fab" id="fabUpload">+</a>
+    <script src="/static/js/script.js"></script>
+</body>
+</html>
