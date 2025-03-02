@@ -60,7 +60,7 @@ A Flask-based web application for uploading, managing, and scanning documents wi
     The app will run at http://localhost:5000.
 
 
-
+# For Login as Admin
 If you want to login as admin follow these Steps:
 Create admins.json for Admin Users:
 In the backend/ directory, create an admins.json file to define admin users. Follow these steps to create an admin user:
