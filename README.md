@@ -47,14 +47,15 @@ A Flask-based web application for uploading, managing, and scanning documents wi
     Before Installing requirements update the pip setuptools wheel for smoothly installing all required file
     
     pip install --upgrade pip setuptools wheel
+    
     pip install -r requirements.txt
 
     """Make Sure you have C++ Build tools to for Spacy Installation."""
 
-4.  Install SpaCy Model:
+5.  Install SpaCy Model:
     python -m spacy download en_core_web_md
 
-5.  Run the Application
+6.  Run the Application
     Python app.py
     The app will run at http://localhost:5000.
 
