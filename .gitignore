@@ -169,3 +169,6 @@ cython_debug/
 
 # PyPI configuration file
 .pypirc
+# Project-specific exclusions
+database.db
+uploads/
