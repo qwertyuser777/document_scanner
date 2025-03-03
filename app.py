@@ -13,7 +13,7 @@ from matching import init_matching_routes, extract_text, find_similar_documents
 from analytics import init_analytics_routes, log_scan
 
 app = Flask(__name__)
-app.secret_key = 'e8f5a7b3c2d1f9e0a4b6c8d2e1f3a5b7c9d0e2f4a6b80'
+app.secret_key = '87f18ed2768f2ba8b78d376f71115eb79302f8b0f9400a3acc40dae392d22a54'
 
 SERVER_ID = str(uuid.uuid4())
 print(f"Server started with ID: {SERVER_ID}")
